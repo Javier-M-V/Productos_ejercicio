@@ -12,9 +12,36 @@ namespace Productos
 {
     public partial class Form2 : Form
     {
+        public string nombre { get; set; }
+        public int codigo { get; set; }
+        public int cantidad { get; set; }
+        public string descripcion { get; set; }
+        public double precio { get; set; }
+        public string tipo { get; set; }
+
         public Form2()
         {
             InitializeComponent();
+
+        }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonAlta_Click(object sender, EventArgs e)
+        {
+            nombre = textBoxNombre.Text;
+            codigo = Convert.ToInt32(numericUpDownCodigo.Value);
+            cantidad = Convert.ToInt32(numericUpDownCantidad.Value);
+            descripcion = textBoxNombre.Text;
+            precio = Convert.ToDouble(numericUpDownPrecio.Value);
+            tipo = Convert.ToString(ComboBoxTipo.SelectedValue);
+
+            
+
+            this.Close();
         }
     }
 }

@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.TablaDatos = new System.Windows.Forms.DataGridView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.insertarNuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,11 +42,6 @@
             this.ColumnTipo = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ColumnModificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColumnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.insertarNuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.TablaDatos)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -63,48 +63,10 @@
             this.ColumnBorrar});
             this.TablaDatos.Location = new System.Drawing.Point(13, 46);
             this.TablaDatos.Name = "TablaDatos";
+            this.TablaDatos.ReadOnly = true;
             this.TablaDatos.Size = new System.Drawing.Size(851, 344);
             this.TablaDatos.TabIndex = 0;
-            // 
-            // ColumnNombre
-            // 
-            this.ColumnNombre.HeaderText = "Nombre";
-            this.ColumnNombre.Name = "ColumnNombre";
-            // 
-            // ColumnCodigo
-            // 
-            this.ColumnCodigo.HeaderText = "Código";
-            this.ColumnCodigo.Name = "ColumnCodigo";
-            // 
-            // ColumnCantidad
-            // 
-            this.ColumnCantidad.HeaderText = "Cantidad";
-            this.ColumnCantidad.Name = "ColumnCantidad";
-            // 
-            // ColumnPrecio
-            // 
-            this.ColumnPrecio.HeaderText = "Precio";
-            this.ColumnPrecio.Name = "ColumnPrecio";
-            // 
-            // ColumnDescripcion
-            // 
-            this.ColumnDescripcion.HeaderText = "Descripción";
-            this.ColumnDescripcion.Name = "ColumnDescripcion";
-            // 
-            // ColumnTipo
-            // 
-            this.ColumnTipo.HeaderText = "Tipo";
-            this.ColumnTipo.Name = "ColumnTipo";
-            // 
-            // ColumnModificar
-            // 
-            this.ColumnModificar.HeaderText = "Modificar";
-            this.ColumnModificar.Name = "ColumnModificar";
-            // 
-            // ColumnBorrar
-            // 
-            this.ColumnBorrar.HeaderText = "Borrar";
-            this.ColumnBorrar.Name = "ColumnBorrar";
+            this.TablaDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TablaDatos_CellContentClick);
             // 
             // menuStrip1
             // 
@@ -136,14 +98,61 @@
             // exportarToolStripMenuItem
             // 
             this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
-            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exportarToolStripMenuItem.Text = "Exportar";
             // 
             // importarToolStripMenuItem
             // 
             this.importarToolStripMenuItem.Name = "importarToolStripMenuItem";
-            this.importarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.importarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.importarToolStripMenuItem.Text = "Importar";
+            // 
+            // ColumnNombre
+            // 
+            this.ColumnNombre.HeaderText = "Nombre";
+            this.ColumnNombre.Name = "ColumnNombre";
+            // 
+            // ColumnCodigo
+            // 
+            this.ColumnCodigo.HeaderText = "Código";
+            this.ColumnCodigo.Name = "ColumnCodigo";
+            // 
+            // ColumnCantidad
+            // 
+            this.ColumnCantidad.HeaderText = "Cantidad";
+            this.ColumnCantidad.Name = "ColumnCantidad";
+            // 
+            // ColumnPrecio
+            // 
+            this.ColumnPrecio.HeaderText = "Precio";
+            this.ColumnPrecio.Name = "ColumnPrecio";
+            // 
+            // ColumnDescripcion
+            // 
+            this.ColumnDescripcion.HeaderText = "Descripción";
+            this.ColumnDescripcion.Name = "ColumnDescripcion";
+            // 
+            // ColumnTipo
+            // 
+            this.ColumnTipo.HeaderText = "Tipo";
+            this.ColumnTipo.Items.AddRange(new object[] {
+            "Cuerpo",
+            "Lente",
+            "Accesorios",
+            "Transporte"});
+            this.ColumnTipo.Name = "ColumnTipo";
+            // 
+            // ColumnModificar
+            // 
+            this.ColumnModificar.HeaderText = "Modificar";
+            this.ColumnModificar.Name = "ColumnModificar";
+            this.ColumnModificar.Text = "✍";
+            // 
+            // ColumnBorrar
+            // 
+            this.ColumnBorrar.HeaderText = "Borrar";
+            this.ColumnBorrar.Name = "ColumnBorrar";
+            this.ColumnBorrar.Text = "✗";
             // 
             // Form1
             // 
@@ -166,6 +175,11 @@
         #endregion
 
         private System.Windows.Forms.DataGridView TablaDatos;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem insertarNuevoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importarToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCantidad;
@@ -174,11 +188,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn ColumnTipo;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnModificar;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnBorrar;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem insertarNuevoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem importarToolStripMenuItem;
     }
 }
 

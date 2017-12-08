@@ -32,16 +32,25 @@ namespace Productos
 
         private void buttonAlta_Click(object sender, EventArgs e)
         {
-            nombre = textBoxNombre.Text;
-            codigo = Convert.ToInt32(numericUpDownCodigo.Value);
-            cantidad = Convert.ToInt32(numericUpDownCantidad.Value);
-            descripcion = textBoxNombre.Text;
-            precio = Convert.ToDouble(numericUpDownPrecio.Value);
-            tipo = Convert.ToString(ComboBoxTipo.SelectedValue);
-
+            if(textBoxNombre.Text=="" || numericUpDownCodigo.Value.Equals(""))
+            {
+                MessageBox.Show("Hay campos clave vacíos"); 
+            }
+            else
+            {
+                nombre = textBoxNombre.Text;
+                codigo = Convert.ToInt32(numericUpDownCodigo.Value);
+                cantidad = Convert.ToInt32(numericUpDownCantidad.Value);
+                descripcion = textBoxNombre.Text;
+                precio = Convert.ToDouble(numericUpDownPrecio.Value);
+                tipo = Convert.ToString(ComboBoxTipo.SelectedValue);
+                this.Close();
+                
+            }
             
 
-            this.Close();
+
+
         }
     }
 }

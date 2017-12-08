@@ -39,7 +39,7 @@
             this.ColumnCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTipo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ColumnTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColumnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TablaDatos)).BeginInit();
@@ -97,14 +97,14 @@
             // exportarToolStripMenuItem
             // 
             this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
-            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.exportarToolStripMenuItem.Text = "Exportar";
             this.exportarToolStripMenuItem.Click += new System.EventHandler(this.exportarToolStripMenuItem_Click);
             // 
             // importarToolStripMenuItem
             // 
             this.importarToolStripMenuItem.Name = "importarToolStripMenuItem";
-            this.importarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.importarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.importarToolStripMenuItem.Text = "Importar";
             this.importarToolStripMenuItem.Click += new System.EventHandler(this.importarToolStripMenuItem_Click);
             // 
@@ -112,47 +112,50 @@
             // 
             this.ColumnNombre.HeaderText = "Nombre";
             this.ColumnNombre.Name = "ColumnNombre";
+            this.ColumnNombre.ReadOnly = true;
             // 
             // ColumnCodigo
             // 
             this.ColumnCodigo.HeaderText = "Código";
             this.ColumnCodigo.Name = "ColumnCodigo";
+            this.ColumnCodigo.ReadOnly = true;
             // 
             // ColumnCantidad
             // 
             this.ColumnCantidad.HeaderText = "Cantidad";
             this.ColumnCantidad.Name = "ColumnCantidad";
+            this.ColumnCantidad.ReadOnly = true;
             // 
             // ColumnPrecio
             // 
             this.ColumnPrecio.HeaderText = "Precio";
             this.ColumnPrecio.Name = "ColumnPrecio";
+            this.ColumnPrecio.ReadOnly = true;
             // 
             // ColumnDescripcion
             // 
             this.ColumnDescripcion.HeaderText = "Descripción";
             this.ColumnDescripcion.Name = "ColumnDescripcion";
+            this.ColumnDescripcion.ReadOnly = true;
             // 
             // ColumnTipo
             // 
             this.ColumnTipo.HeaderText = "Tipo";
-            this.ColumnTipo.Items.AddRange(new object[] {
-            "Cuerpo",
-            "Lente",
-            "Accesorios",
-            "Transporte"});
             this.ColumnTipo.Name = "ColumnTipo";
+            this.ColumnTipo.ReadOnly = true;
             // 
             // ColumnModificar
             // 
             this.ColumnModificar.HeaderText = "Modificar";
             this.ColumnModificar.Name = "ColumnModificar";
+            this.ColumnModificar.ReadOnly = true;
             this.ColumnModificar.Text = "✍";
             // 
             // ColumnBorrar
             // 
             this.ColumnBorrar.HeaderText = "Borrar";
             this.ColumnBorrar.Name = "ColumnBorrar";
+            this.ColumnBorrar.ReadOnly = true;
             this.ColumnBorrar.Text = "✗";
             // 
             // Form1
@@ -186,7 +189,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDescripcion;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ColumnTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipo;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnModificar;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnBorrar;
     }

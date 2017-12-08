@@ -13,11 +13,11 @@ namespace Productos
      
     public partial class Form1 : Form
     {
-        public string nombreValor { get; set; }
+        public string nombreValor = "";
         public int codigoValor = 0;
         public int cantidadValor = 0;
-        public string descripcionValor = "";
         public double precioValor = 0.0;
+        public string descripcionValor = "";
         public string tipoValor = "";
         public string mod = "✍";
         public string del = "✗";
@@ -26,7 +26,7 @@ namespace Productos
         {
             InitializeComponent();
             this.Text = "Productos";
-            TablaDatos.Rows.Add("D3200", 1, 55, "DX format", 455.5, "Cuerpo",mod,del);
+            TablaDatos.Rows.Add("D3200", 1, 55, 455.5 , "DX format", "Cuerpo",mod,del);
         }
 
         private void insertarNuevoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,12 +40,22 @@ namespace Productos
                 nombreValor = a.nombre;
                 codigoValor = a.codigo;
                 cantidadValor = a.cantidad;
-                descripcionValor = a.descripcion;
                 precioValor = a.precio;
+                descripcionValor = a.descripcion;
                 tipoValor = a.tipo;
-                TablaDatos.Rows.Add(nombreValor, codigoValor, cantidadValor, descripcionValor, precioValor, tipoValor, mod, del);
+                if (comprobar())
+                {
+                    TablaDatos.Rows.Add(nombreValor, codigoValor, cantidadValor, precioValor, descripcionValor, tipoValor, mod, del);
+                }
+                else {
 
+                    MessageBox.Show("Hay campos clave repetidos. Comprueba que el código no exista y que el producto tenga nombre");
+                }
             }
+        }
+        private bool comprobar() {
+
+            return true;
         }
 
 

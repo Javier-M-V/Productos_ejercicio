@@ -13,7 +13,7 @@ namespace Productos
      
     public partial class Form1 : Form
     {
-        public string nombreValor = "AAAAAAAAAAAAAAA";
+        public string nombreValor { get; set; }
         public int codigoValor = 0;
         public int cantidadValor = 0;
         public string descripcionValor = "";
@@ -25,33 +25,36 @@ namespace Productos
         public Form1()
         {
             InitializeComponent();
+            this.Text = "Productos";
             TablaDatos.Rows.Add("D3200", 1, 55, "DX format", 455.5, "Cuerpo",mod,del);
         }
 
         private void insertarNuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form2 a = new Form2();
-            a.Show();
+            a.Text = "Nuevo producto";
+            DialogResult ventana = new DialogResult();
+            ventana = a.ShowDialog();
+            if (a.DialogResult == DialogResult.OK)
+            {
+                nombreValor = a.nombre;
+                codigoValor = a.codigo;
+                cantidadValor = a.cantidad;
+                descripcionValor = a.descripcion;
+                precioValor = a.precio;
+                tipoValor = a.tipo;
+                TablaDatos.Rows.Add(nombreValor, codigoValor, cantidadValor, descripcionValor, precioValor, tipoValor, mod, del);
 
-            codigoValor = a.codigo;
-            cantidadValor = a.cantidad;
-            descripcionValor = a.descripcion;
-            precioValor = a.precio;
-            tipoValor = a.tipo;
-
-
-            /*TablaDatos.Rows.["ColumnNombre"].Value = a.nombre;
-            TablaDatos.Rows.["ColumCodigo"].Value = a.codigo;
-            TablaDatos.Rows.["ColumCantidad"].Value = a.cantidad;
-            TablaDatos.Rows.["ColumDescripcion"].Value = a.descripcion;
-            TablaDatos.Rows.["ColumPrecio"].Value = a.precio;
-            TablaDatos.Rows.["ColumTipo"].Value = a.tipo;*/
-            TablaDatos.Rows.Add(a.nombre, a.codigo, a.cantidad, a.descripcion, a.precio, a.tipo);
-            
-            
+            }
         }
 
-        private void TablaDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void exportarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void importarToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

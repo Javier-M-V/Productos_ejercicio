@@ -44,8 +44,9 @@ namespace Productos
                 descripcion = textBoxNombre.Text;
                 precio = Convert.ToDouble(numericUpDownPrecio.Value);
                 tipo = Convert.ToString(ComboBoxTipo.SelectedValue);
+                this.DialogResult = DialogResult.OK;
                 this.Close();
-                
+
             }
             
 

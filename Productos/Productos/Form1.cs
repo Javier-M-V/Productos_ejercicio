@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,7 +20,7 @@ namespace Productos
         public int cantidadValor = 0;
         public double precioValor = 0.0;
         public string descripcionValor = "";
-        public string tipoValor = "";
+        public string tipoValor = "";/*Lentes,Cuerpos,Accesorios,Herrajes,Fundas y transporte*/
         public string mod = "✍";
         public string del = "✗";
 
@@ -61,12 +63,34 @@ namespace Productos
 
         private void exportarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+            /*File.Create("productos_exportados.txt");
+            TextWriter tw = new StreamWriter("productos_exportados.txt", true);//FIX THIS
+            for (int i = 0; i < TablaDatos.Rows.Count; i++) {
 
+                DataGridViewRow row = TablaDatos.Rows[i];
+                tw.WriteLine(row.Cells[1].Value.ToString() + row.Cells[2].Value.ToString() + row.Cells[3].Value.ToString() + row.Cells[5].Value.ToString() +mod+del);
+
+            }
+            tw.Close();*/
         }
 
         private void importarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            char seps = ',';
+            string ruta="";
+            OpenFileDialog archivo = new OpenFileDialog();
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+                ruta = archivo.FileName;
+            }
+            string[] lineastexto = System.IO.File.ReadAllLines(ruta);
+            for(int i=0;i<lineastexto.Length; i++)
+            {
+                
+                String[] valores = lineastexto[i].Split(seps);
+                TablaDatos.Rows.Add(valores[0], valores[1], valores[2], valores[3], valores[4], valores[5],mod, del);
+            }
         }
     }
 }

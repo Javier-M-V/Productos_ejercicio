@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TablaDatos = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.insertarNuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,6 +43,7 @@
             this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnImagen = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnModificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColumnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TablaDatos)).BeginInit();
@@ -59,12 +63,13 @@
             this.ColumnPrecio,
             this.ColumnDescripcion,
             this.ColumnTipo,
+            this.ColumnImagen,
             this.ColumnModificar,
             this.ColumnBorrar});
             this.TablaDatos.Location = new System.Drawing.Point(13, 46);
             this.TablaDatos.Name = "TablaDatos";
             this.TablaDatos.ReadOnly = true;
-            this.TablaDatos.Size = new System.Drawing.Size(851, 344);
+            this.TablaDatos.Size = new System.Drawing.Size(943, 344);
             this.TablaDatos.TabIndex = 0;
             this.TablaDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TablaDatos_CellContentClick);
             // 
@@ -75,7 +80,7 @@
             this.archivoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(876, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(975, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -98,14 +103,14 @@
             // exportarToolStripMenuItem
             // 
             this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
-            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exportarToolStripMenuItem.Text = "Exportar";
             this.exportarToolStripMenuItem.Click += new System.EventHandler(this.exportarToolStripMenuItem_Click);
             // 
             // importarToolStripMenuItem
             // 
             this.importarToolStripMenuItem.Name = "importarToolStripMenuItem";
-            this.importarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.importarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.importarToolStripMenuItem.Text = "Importar";
             this.importarToolStripMenuItem.Click += new System.EventHandler(this.importarToolStripMenuItem_Click);
             // 
@@ -117,18 +122,27 @@
             // 
             // ColumnCodigo
             // 
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.ColumnCodigo.DefaultCellStyle = dataGridViewCellStyle1;
             this.ColumnCodigo.HeaderText = "Código";
             this.ColumnCodigo.Name = "ColumnCodigo";
             this.ColumnCodigo.ReadOnly = true;
             // 
             // ColumnCantidad
             // 
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.ColumnCantidad.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColumnCantidad.HeaderText = "Cantidad";
             this.ColumnCantidad.Name = "ColumnCantidad";
             this.ColumnCantidad.ReadOnly = true;
             // 
             // ColumnPrecio
             // 
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.ColumnPrecio.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnPrecio.HeaderText = "Precio";
             this.ColumnPrecio.Name = "ColumnPrecio";
             this.ColumnPrecio.ReadOnly = true;
@@ -144,6 +158,12 @@
             this.ColumnTipo.HeaderText = "Tipo";
             this.ColumnTipo.Name = "ColumnTipo";
             this.ColumnTipo.ReadOnly = true;
+            // 
+            // ColumnImagen
+            // 
+            this.ColumnImagen.HeaderText = "Imagen";
+            this.ColumnImagen.Name = "ColumnImagen";
+            this.ColumnImagen.ReadOnly = true;
             // 
             // ColumnModificar
             // 
@@ -165,7 +185,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 402);
+            this.ClientSize = new System.Drawing.Size(975, 402);
             this.Controls.Add(this.TablaDatos);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -193,6 +213,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDescripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipo;
+        private System.Windows.Forms.DataGridViewImageColumn ColumnImagen;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnModificar;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnBorrar;
     }

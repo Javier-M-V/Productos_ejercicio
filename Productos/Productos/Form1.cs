@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Productos
@@ -27,7 +19,7 @@ namespace Productos
         {
             InitializeComponent();
             this.Text = "Productos";
-            TablaDatos.Rows.Add("D3200", 1, 55, 455.5 , "DX format", "Cuerpo",mod,del);//Fila de prueba
+            TablaDatos.Rows.Add("D3200", 1, 55, 455.5 , "DX format", "Cuerpo",null,mod,del);//Fila de prueba
         }
 
         //inserto filas una a una
@@ -79,7 +71,6 @@ namespace Productos
         {
             try
             {
-
                 File.Create("productos_exportados.txt").Close();
                 using (TextWriter tw = new StreamWriter("productos_exportados.txt", true))
                 {
@@ -97,7 +88,6 @@ namespace Productos
 
                 MessageBox.Show("Error de lectura/escritura. Comprueba permisos y/o bloqueos."+ Environment.NewLine + "WTF ;)");
             }
-   
         }
 
         //Importo a CSV,guardando cada string de cada línea en un array, previo split de las comas para luego subirlo a la tabla
@@ -117,7 +107,7 @@ namespace Productos
                 {
 
                     String[] valores = lineastexto[i].Split(separadores);
-                    TablaDatos.Rows.Add(valores[0], valores[1], valores[2], valores[3], valores[4], valores[5], mod, del);
+                    TablaDatos.Rows.Add(valores[0], Int32.Parse(valores[1]), Int32.Parse(valores[2]), Double.Parse(valores[3]), valores[4], valores[5],null, mod, del);
                 }
             }
             else {
@@ -150,7 +140,7 @@ namespace Productos
                 ventana = a.ShowDialog();
                 if (a.DialogResult == DialogResult.OK)
                 {
-                    if (nombreValor != "")
+                    if (a.nombre != "")
                     {
                         nombreValor = a.nombre;
                         cantidadValor = a.cantidad;
@@ -162,8 +152,8 @@ namespace Productos
                         TablaDatos.Rows[e.RowIndex].Cells[3].Value = precioValor;
                         TablaDatos.Rows[e.RowIndex].Cells[4].Value = descripcionValor;
                         TablaDatos.Rows[e.RowIndex].Cells[5].Value = tipoValor;
-                        TablaDatos.Rows[e.RowIndex].Cells[6].Value = mod;
-                        TablaDatos.Rows[e.RowIndex].Cells[7].Value = del;
+                        TablaDatos.Rows[e.RowIndex].Cells[7].Value = mod;
+                        TablaDatos.Rows[e.RowIndex].Cells[8].Value = del;
                         MessageBox.Show("Modificado");
 
                     }

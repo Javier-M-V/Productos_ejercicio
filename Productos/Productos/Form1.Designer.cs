@@ -66,6 +66,7 @@
             this.TablaDatos.ReadOnly = true;
             this.TablaDatos.Size = new System.Drawing.Size(851, 344);
             this.TablaDatos.TabIndex = 0;
+            this.TablaDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TablaDatos_CellContentClick);
             // 
             // menuStrip1
             // 
@@ -150,6 +151,7 @@
             this.ColumnModificar.Name = "ColumnModificar";
             this.ColumnModificar.ReadOnly = true;
             this.ColumnModificar.Text = "✍";
+            this.ColumnModificar.UseColumnTextForButtonValue = true;
             // 
             // ColumnBorrar
             // 
@@ -157,6 +159,7 @@
             this.ColumnBorrar.Name = "ColumnBorrar";
             this.ColumnBorrar.ReadOnly = true;
             this.ColumnBorrar.Text = "✗";
+            this.ColumnBorrar.UseColumnTextForButtonValue = true;
             // 
             // Form1
             // 

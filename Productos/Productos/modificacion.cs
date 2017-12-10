@@ -10,7 +10,9 @@ using System.Windows.Forms;
 
 namespace Productos
 {
-    public partial class Form2 : Form
+    /*Como quería algunos cambios en la apariencia y en el comportamiento he hecho un Wform diferente
+     seguro que hay maneras más fáciles de hacer esto sin añadir código repetido, pero ahora mismo, no se me ocurren*/
+    public partial class modificacion : Form
     {
         public string nombre { get; set; }
         public int codigo { get; set; }
@@ -19,7 +21,7 @@ namespace Productos
         public double precio { get; set; }
         public string tipo { get; set; }
 
-        public Form2()
+        public modificacion()
         {
             InitializeComponent();
 
@@ -29,12 +31,12 @@ namespace Productos
         {
             this.Close();
         }
-        //Compruebo las claves y cargo los valores si no hay errores
+
         private void buttonAlta_Click(object sender, EventArgs e)
         {
-            if(textBoxNombre.Text=="" || numericUpDownCodigo.Value.Equals(""))
+            if (textBoxNombre.Text == "")
             {
-                MessageBox.Show("Hay campos clave vacíos"); 
+                MessageBox.Show("Hay campos clave vacíos");
             }
             else
             {
@@ -48,10 +50,6 @@ namespace Productos
                 this.Close();
 
             }
-            
-
-
-
         }
     }
 }

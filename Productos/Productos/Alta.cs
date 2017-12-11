@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Productos
 {
-    public partial class Form2 : Form
+    public partial class Alta : Form
     {
         public string nombre { get; set; }
         public int codigo { get; set; }
@@ -19,7 +19,7 @@ namespace Productos
         public double precio { get; set; }
         public string tipo { get; set; }
 
-        public Form2()
+        public Alta()
         {
             InitializeComponent();
 

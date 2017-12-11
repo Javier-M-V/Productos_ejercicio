@@ -1,6 +1,6 @@
 ﻿namespace Productos
 {
-    partial class modificacion
+    partial class Modificacion
     {
         /// <summary>
         /// Required designer variable.

@@ -12,7 +12,7 @@ namespace Productos
 {
     /*Como quería algunos cambios en la apariencia y en el comportamiento he hecho un Wform diferente
      seguro que hay maneras más fáciles de hacer esto sin añadir código repetido, pero ahora mismo, no se me ocurren*/
-    public partial class modificacion : Form
+    public partial class Modificacion : Form
     {
         public string nombre { get; set; }
         public int codigo { get; set; }
@@ -21,7 +21,7 @@ namespace Productos
         public double precio { get; set; }
         public string tipo { get; set; }
 
-        public modificacion()
+        public Modificacion()
         {
             InitializeComponent();
 

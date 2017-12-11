@@ -1,31 +1,37 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
+
+/*He metido los form para cada operación, pero para importar, lo más conveniente
+ es lo más común: usar un OpenFileDialog */
+
 namespace Productos
 {
-    public partial class Form1 : Form
+    public partial class Principal : Form
     {
         public string nombreValor = "";
         public int codigoValor = 0;
         public int cantidadValor = 0;
         public double precioValor = 0.0;
         public string descripcionValor = "";
-        public string tipoValor = "";/*Lentes,Cuerpos,Accesorios,Herrajes,Fundas y transporte*/
+        public string tipoValor = "";/*Lentes, Cuerpos, Accesorios, Herrajes, Fundas y transporte*/
         public string mod = "✍";
         public string del = "✗";
 
-        public Form1()
+        public Principal()
         {
             InitializeComponent();
             this.Text = "Productos";
-            TablaDatos.Rows.Add("D3200", 1, 55, 455.5 , "DX format", "Cuerpo",null,mod,del);//Fila de prueba
+            Image imagen = Image.FromFile("d3200.jpeg");
+            TablaDatos.Rows.Add("D3200", 1, 55, 455.5 , "DX format", "Cuerpo",imagen,mod,del);//Fila de prueba
         }
 
-        //inserto filas una a una
+        //inserto filas una a una desde el Form2
         private void insertarNuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 a = new Form2();
+            Alta a = new Alta();
             a.Text = "Nuevo producto";
             DialogResult ventana = new DialogResult();
             ventana = a.ShowDialog();
@@ -71,18 +77,25 @@ namespace Productos
         {
             try
             {
-                File.Create("productos_exportados.txt").Close();
-                using (TextWriter tw = new StreamWriter("productos_exportados.txt", true))
+                Exportar a = new Exportar();
+                a.Text = "Ruta a exportar";
+                DialogResult ventana = new DialogResult();
+                ventana = a.ShowDialog();
+                if (a.DialogResult == DialogResult.OK)
                 {
-                    
-                    for (int i = 0; i < TablaDatos.Rows.Count; i++)
+                    File.Create(a.nombrearchivo + ".txt").Close();
+                    using (TextWriter tw = new StreamWriter(a.nombrearchivo + ".txt", true))
                     {
-                        DataGridViewRow row = TablaDatos.Rows[i];
-                        tw.WriteLine(row.Cells[0].Value.ToString() + "," + row.Cells[1].Value.ToString() + "," + row.Cells[2].Value.ToString() + "," + row.Cells[4].Value.ToString() + "," + row.Cells[5].Value.ToString());
+
+                        for (int i = 0; i < TablaDatos.Rows.Count; i++)
+                        {
+                            DataGridViewRow row = TablaDatos.Rows[i];
+                            tw.WriteLine(row.Cells[0].Value.ToString() + "," + row.Cells[1].Value.ToString() + "," + row.Cells[2].Value.ToString() + "," + row.Cells[4].Value.ToString() + "," + row.Cells[5].Value.ToString());
+                        }
+                        tw.Close();
+                        MessageBox.Show("Exportado con éxito");
                     }
-                    tw.Close();
-                    MessageBox.Show("Exportado con éxito");
-                }
+                }  
             }
             catch (IOException) {
 
@@ -101,14 +114,14 @@ namespace Productos
                 if (archivo.ShowDialog() == DialogResult.OK)
                 {
                     ruta = archivo.FileName;
-                }
-                string[] lineastexto = System.IO.File.ReadAllLines(ruta);
-                for (int i = 0; i < lineastexto.Length; i++)
-                {
+                    string[] lineastexto = System.IO.File.ReadAllLines(ruta);
+                    for (int i = 0; i < lineastexto.Length; i++)
+                    {
 
-                    String[] valores = lineastexto[i].Split(separadores);
-                    TablaDatos.Rows.Add(valores[0], Int32.Parse(valores[1]), Int32.Parse(valores[2]), Double.Parse(valores[3]), valores[4], valores[5],null, mod, del);
-                }
+                        String[] valores = lineastexto[i].Split(separadores);
+                        TablaDatos.Rows.Add(valores[0], Int32.Parse(valores[1]), Int32.Parse(valores[2]), Double.Parse(valores[3]), valores[4], valores[5], null, mod, del);
+                    }
+                }             
             }
             else {
                 MessageBox.Show("Nada que exportar. La tabla está vacía");
@@ -134,7 +147,7 @@ namespace Productos
             if (e.ColumnIndex == TablaDatos.Columns["ColumnModificar"].Index)
             {
                 nombrearticulo = TablaDatos.Rows[e.RowIndex].Cells[0].Value.ToString();
-                modificacion a = new modificacion();
+                Modificacion a = new Modificacion();
                 a.Text = "Modificando "+nombrearticulo;
                 DialogResult ventana = new DialogResult();
                 ventana = a.ShowDialog();
@@ -159,6 +172,11 @@ namespace Productos
                     }
                 }
             }
+        }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

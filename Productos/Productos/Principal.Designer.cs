@@ -1,6 +1,6 @@
 ﻿namespace Productos
 {
-    partial class Form1
+    partial class Principal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TablaDatos = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.insertarNuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +46,7 @@
             this.ColumnImagen = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnModificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColumnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.TablaDatos)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +78,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.insertarNuevoToolStripMenuItem,
-            this.archivoToolStripMenuItem});
+            this.archivoToolStripMenuItem,
+            this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(975, 24);
@@ -103,14 +105,14 @@
             // exportarToolStripMenuItem
             // 
             this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
-            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.exportarToolStripMenuItem.Text = "Exportar";
             this.exportarToolStripMenuItem.Click += new System.EventHandler(this.exportarToolStripMenuItem_Click);
             // 
             // importarToolStripMenuItem
             // 
             this.importarToolStripMenuItem.Name = "importarToolStripMenuItem";
-            this.importarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.importarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.importarToolStripMenuItem.Text = "Importar";
             this.importarToolStripMenuItem.Click += new System.EventHandler(this.importarToolStripMenuItem_Click);
             // 
@@ -122,27 +124,27 @@
             // 
             // ColumnCodigo
             // 
-            dataGridViewCellStyle1.Format = "N0";
-            dataGridViewCellStyle1.NullValue = null;
-            this.ColumnCodigo.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.ColumnCodigo.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColumnCodigo.HeaderText = "Código";
             this.ColumnCodigo.Name = "ColumnCodigo";
             this.ColumnCodigo.ReadOnly = true;
             // 
             // ColumnCantidad
             // 
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.ColumnCantidad.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Format = "N0";
+            dataGridViewCellStyle5.NullValue = null;
+            this.ColumnCantidad.DefaultCellStyle = dataGridViewCellStyle5;
             this.ColumnCantidad.HeaderText = "Cantidad";
             this.ColumnCantidad.Name = "ColumnCantidad";
             this.ColumnCantidad.ReadOnly = true;
             // 
             // ColumnPrecio
             // 
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.ColumnPrecio.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Format = "N2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.ColumnPrecio.DefaultCellStyle = dataGridViewCellStyle6;
             this.ColumnPrecio.HeaderText = "Precio";
             this.ColumnPrecio.Name = "ColumnPrecio";
             this.ColumnPrecio.ReadOnly = true;
@@ -161,7 +163,9 @@
             // 
             // ColumnImagen
             // 
+            this.ColumnImagen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.ColumnImagen.HeaderText = "Imagen";
+            this.ColumnImagen.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.ColumnImagen.Name = "ColumnImagen";
             this.ColumnImagen.ReadOnly = true;
             // 
@@ -181,7 +185,14 @@
             this.ColumnBorrar.Text = "✗";
             this.ColumnBorrar.UseColumnTextForButtonValue = true;
             // 
-            // Form1
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
+            // 
+            // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -189,7 +200,7 @@
             this.Controls.Add(this.TablaDatos);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "Principal";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.TablaDatos)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -216,6 +227,7 @@
         private System.Windows.Forms.DataGridViewImageColumn ColumnImagen;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnModificar;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnBorrar;
+        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
     }
 }
 

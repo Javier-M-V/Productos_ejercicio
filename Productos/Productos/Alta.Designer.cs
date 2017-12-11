@@ -1,6 +1,6 @@
 ﻿namespace Productos
 {
-    partial class Form2
+    partial class Alta
     {
         /// <summary>
         /// Required designer variable.

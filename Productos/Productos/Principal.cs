@@ -24,12 +24,12 @@ namespace Productos
         {
             InitializeComponent();
             this.Text = "Productos";
-            Image imagen = Image.FromFile("d3200.jpeg");
-            TablaDatos.Rows.Add("D3200", 1, 55, 455.5 , "DX format", "Cuerpo",imagen,mod,del);//Fila de prueba
+            Image imagen = Image.FromFile(@".\d3200.jpeg");
+            TablaDatos.Rows.Add("D3200", 1, 55, 455.5, "DX format", "Cuerpo", imagen, mod, del);//Fila de prueba
         }
 
         //inserto filas una a una desde el Form2
-        private void insertarNuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void insertarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Alta a = new Alta();
             a.Text = "Nuevo producto";
@@ -45,9 +45,10 @@ namespace Productos
                 tipoValor = a.tipo;
                 if (comprobar(nombreValor, codigoValor))
                 {
-                    TablaDatos.Rows.Add(nombreValor, codigoValor, cantidadValor, precioValor, descripcionValor, tipoValor, mod, del);
+                    TablaDatos.Rows.Add(nombreValor, codigoValor, cantidadValor, precioValor, descripcionValor, tipoValor, null, mod, del);
                 }
-                else {
+                else
+                {
 
                     MessageBox.Show("Comprueba que el código no exista previamente y que el producto tenga nombre y código asignados");
                 }
@@ -95,11 +96,11 @@ namespace Productos
                         tw.Close();
                         MessageBox.Show("Exportado con éxito");
                     }
-                }  
+                }
             }
             catch (IOException) {
 
-                MessageBox.Show("Error de lectura/escritura. Comprueba permisos y/o bloqueos."+ Environment.NewLine + "WTF ;)");
+                MessageBox.Show("Error de lectura/escritura. Comprueba permisos y/o bloqueos." + Environment.NewLine + "WTF ;)");
             }
         }
 
@@ -121,7 +122,7 @@ namespace Productos
                         String[] valores = lineastexto[i].Split(separadores);
                         TablaDatos.Rows.Add(valores[0], Int32.Parse(valores[1]), Int32.Parse(valores[2]), Double.Parse(valores[3]), valores[4], valores[5], null, mod, del);
                     }
-                }             
+                }
             }
             else {
                 MessageBox.Show("Nada que exportar. La tabla está vacía");
@@ -136,7 +137,7 @@ namespace Productos
             if (e.ColumnIndex == TablaDatos.Columns["ColumnBorrar"].Index)
             {
                 nombrearticulo = TablaDatos.Rows[e.RowIndex].Cells[0].Value.ToString();
-                DialogResult dialogResult = MessageBox.Show("¿Quieres borrar "+nombrearticulo+" ?", "Aviso", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("¿Quieres borrar " + nombrearticulo + " ?", "Aviso", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     TablaDatos.Rows.RemoveAt(e.RowIndex);
@@ -148,7 +149,7 @@ namespace Productos
             {
                 nombrearticulo = TablaDatos.Rows[e.RowIndex].Cells[0].Value.ToString();
                 Modificacion a = new Modificacion();
-                a.Text = "Modificando "+nombrearticulo;
+                a.Text = "Modificando " + nombrearticulo;
                 DialogResult ventana = new DialogResult();
                 ventana = a.ShowDialog();
                 if (a.DialogResult == DialogResult.OK)
@@ -165,10 +166,10 @@ namespace Productos
                         TablaDatos.Rows[e.RowIndex].Cells[3].Value = precioValor;
                         TablaDatos.Rows[e.RowIndex].Cells[4].Value = descripcionValor;
                         TablaDatos.Rows[e.RowIndex].Cells[5].Value = tipoValor;
+                        TablaDatos.Rows[e.RowIndex].Cells[6].Value = null;
                         TablaDatos.Rows[e.RowIndex].Cells[7].Value = mod;
                         TablaDatos.Rows[e.RowIndex].Cells[8].Value = del;
                         MessageBox.Show("Modificado");
-
                     }
                 }
             }
@@ -178,5 +179,35 @@ namespace Productos
         {
 
         }
+
+        //modificación a partir de selección 
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string nombrearticulo = TablaDatos.SelectedRows[0].Cells[1].Value.ToString();
+            int index = TablaDatos.SelectedRows[0].Index;
+            Modificacion a = new Modificacion();
+            a.Text = "Modificando " + nombrearticulo;
+            DialogResult ventana = new DialogResult();
+            ventana = a.ShowDialog();
+            if (a.DialogResult == DialogResult.OK)
+            {
+                nombreValor = a.nombre;
+                cantidadValor = a.cantidad;
+                precioValor = a.precio;
+                descripcionValor = a.descripcion;
+                tipoValor = a.tipo;
+                TablaDatos.Rows[index].Cells[0].Value = nombreValor;
+                TablaDatos.Rows[index].Cells[2].Value = cantidadValor;
+                TablaDatos.Rows[index].Cells[3].Value = precioValor;
+                TablaDatos.Rows[index].Cells[4].Value = descripcionValor;
+                TablaDatos.Rows[index].Cells[5].Value = tipoValor;
+                TablaDatos.Rows[index].Cells[6].Value = null;
+                TablaDatos.Rows[index].Cells[7].Value = mod;
+                TablaDatos.Rows[index].Cells[8].Value = del;
+                MessageBox.Show("Modificado");
+            }
+        }
     }
 }
+      
+    

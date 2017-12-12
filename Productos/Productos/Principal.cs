@@ -72,7 +72,7 @@ namespace Productos
             return salida;
         }
 
-        //importo a CSV leyendo cada fila y escribiendo en fichero
+        //Export a CSV leyendo cada fila y escribiendo en fichero
         private void Exportar_AToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -102,7 +102,7 @@ namespace Productos
             }
         }
 
-        //Exporto a CSV,guardando cada string de cada línea en un array, previo split de las comas para luego subirlo a la tabla
+        //importo a CSV,guardando cada string de cada línea en un array, previo split de las comas para luego subirlo a la tabla
         private void Importar_AToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (TablaDatos.Rows.Count != 0)
@@ -127,10 +127,10 @@ namespace Productos
             }
         }
 
-        //Operaciones sobre botones en la tabla
+        //Operaciones sobre BOTONES en la tabla
         private void TablaDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //borrado según índice
+            //borrado según índice por medio de botón
             string nombrearticulo = "";
             if (e.ColumnIndex == TablaDatos.Columns["ColumnBorrar"].Index)
             {
@@ -142,7 +142,7 @@ namespace Productos
                 }
             }
 
-            //Edición según ínidice  por medio de un formulario adaptado a la modificación
+            //Edición según ínidice  por medio de un formulario adaptado a la modificación por medio de botón
             if (e.ColumnIndex == TablaDatos.Columns["ColumnModificar"].Index)
             {
                 nombrearticulo = TablaDatos.Rows[e.RowIndex].Cells[0].Value.ToString();

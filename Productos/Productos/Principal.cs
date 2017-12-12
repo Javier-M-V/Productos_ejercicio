@@ -175,13 +175,12 @@ namespace Productos
             }
         }
 
-        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e, DataGridViewCellEventArgs ev)
         {
 
         }
 
-        //modificación a partir de selección 
-        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void modificacion()
         {
             string nombrearticulo = TablaDatos.SelectedRows[0].Cells[1].Value.ToString();
             int index = TablaDatos.SelectedRows[0].Index;
@@ -206,6 +205,51 @@ namespace Productos
                 TablaDatos.Rows[index].Cells[8].Value = del;
                 MessageBox.Show("Modificado");
             }
+        }
+
+        //modificación a partir de selección 
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            modificacion();
+        }
+
+
+        private void buttonModificar_Click(object sender, EventArgs e)
+        {
+            modificacion();
+        }
+
+
+        private void borrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            borrado();
+        }
+
+        private void borrado()
+        {
+
+            string nombrearticulo = "";
+            int indice = 0;
+            int numerofilas = TablaDatos.Rows.Count;
+            for (int a = 0; a < numerofilas; a++)
+            {
+                if (TablaDatos.Rows[0].Selected) {
+
+                    nombrearticulo = TablaDatos.Rows[0].Cells[0].Value.ToString();
+                    indice = TablaDatos.Rows[0].Index;
+                }
+                DialogResult dialogResult = MessageBox.Show("¿Quieres borrar " + nombrearticulo + " ?", "Aviso", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    TablaDatos.Rows.RemoveAt(indice);
+                }
+
+            }
+        }
+
+        private void buttonBorrar_Click_1(object sender, EventArgs e)
+        {
+            borrado();
         }
     }
 }

@@ -46,11 +46,7 @@ namespace Productos
                 tipo = ComboBoxTipo.Text;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
-
             }
-            
-
-
 
         }
     }

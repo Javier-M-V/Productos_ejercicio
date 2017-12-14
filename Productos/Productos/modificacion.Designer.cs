@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonImgaenMod = new System.Windows.Forms.Button();
+            this.textBoxRutaMod = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.numericUpDownPrecio = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownCantidad = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownCodigo = new System.Windows.Forms.NumericUpDown();
@@ -51,6 +54,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonImgaenMod);
+            this.groupBox1.Controls.Add(this.textBoxRutaMod);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.numericUpDownPrecio);
             this.groupBox1.Controls.Add(this.numericUpDownCantidad);
             this.groupBox1.Controls.Add(this.numericUpDownCodigo);
@@ -69,6 +75,33 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nuevos datos";
+            // 
+            // buttonImgaenMod
+            // 
+            this.buttonImgaenMod.Location = new System.Drawing.Point(266, 244);
+            this.buttonImgaenMod.Name = "buttonImgaenMod";
+            this.buttonImgaenMod.Size = new System.Drawing.Size(26, 23);
+            this.buttonImgaenMod.TabIndex = 14;
+            this.buttonImgaenMod.Text = "...";
+            this.buttonImgaenMod.UseVisualStyleBackColor = true;
+            this.buttonImgaenMod.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBoxRutaMod
+            // 
+            this.textBoxRutaMod.Enabled = false;
+            this.textBoxRutaMod.Location = new System.Drawing.Point(89, 244);
+            this.textBoxRutaMod.Name = "textBoxRutaMod";
+            this.textBoxRutaMod.Size = new System.Drawing.Size(171, 20);
+            this.textBoxRutaMod.TabIndex = 13;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 244);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(42, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Imagen";
             // 
             // numericUpDownPrecio
             // 
@@ -213,7 +246,7 @@
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
-            // modificacion
+            // Modificacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -221,7 +254,7 @@
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonAlta);
             this.Controls.Add(this.groupBox1);
-            this.Name = "modificacion";
+            this.Name = "Modificacion";
             this.Text = "productonuevo1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -249,5 +282,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonImgaenMod;
+        private System.Windows.Forms.TextBox textBoxRutaMod;
+        private System.Windows.Forms.Label label7;
     }
 }

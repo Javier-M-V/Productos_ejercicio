@@ -18,6 +18,7 @@ namespace Productos
         public string descripcion { get; set; }
         public double precio { get; set; }
         public string tipo { get; set; }
+        public string ruta { get; set; }
 
         public Alta()
         {
@@ -48,6 +49,16 @@ namespace Productos
                 this.Close();
             }
 
+        }
+
+        private void buttonRuta_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog archivo = new OpenFileDialog();
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+                ruta = archivo.FileName;
+                textBoxImagen.Text = ruta;
+            }
         }
     }
 }

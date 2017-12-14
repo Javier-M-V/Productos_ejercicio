@@ -19,6 +19,7 @@ namespace Productos
         public string tipoValor = "";/*Lentes, Cuerpos, Accesorios, Herrajes, Fundas y transporte*/
         public string mod = "✍";
         public string del = "✗";
+        public string rutaimagen = "";
 
         public Principal()
         {
@@ -31,6 +32,7 @@ namespace Productos
         //inserto filas una a una desde el Form2
         private void insertarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Image imagen = null;
             Alta a = new Alta();
             a.Text = "Nuevo producto";
             DialogResult ventana = new DialogResult();
@@ -43,9 +45,15 @@ namespace Productos
                 precioValor = a.precio;
                 descripcionValor = a.descripcion;
                 tipoValor = a.tipo;
+                rutaimagen = a.ruta;
+                try {
+                    imagen = Image.FromFile(rutaimagen);
+                }
+                catch (Exception) { imagen = null; }
+
                 if (comprobar(nombreValor, codigoValor))
                 {
-                    TablaDatos.Rows.Add(nombreValor, codigoValor, cantidadValor, precioValor, descripcionValor, tipoValor, null, mod, del);
+                    TablaDatos.Rows.Add(nombreValor, codigoValor, cantidadValor, precioValor, descripcionValor, tipoValor, imagen, mod, del);
                 }
                 else
                 {
@@ -172,12 +180,6 @@ namespace Productos
                 }
             }
         }
-
-        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-        
 
         //botón de modificación a partir de selección 
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)

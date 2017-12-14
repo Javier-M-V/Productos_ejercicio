@@ -2,7 +2,6 @@ C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\bin\Debug\P
 C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\bin\Debug\Productos.exe
 C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\bin\Debug\Productos.pdb
 C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\obj\Debug\Productos.Exportar.resources
-C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\obj\Debug\Productos.Ayuda.resources
 C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\obj\Debug\Productos.Principal.resources
 C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\obj\Debug\Productos.Alta.resources
 C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\obj\Debug\Productos.Modificacion.resources

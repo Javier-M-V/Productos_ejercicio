@@ -43,6 +43,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonAlta = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxImagen = new System.Windows.Forms.TextBox();
+            this.buttonRuta = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrecio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCantidad)).BeginInit();
@@ -51,6 +54,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonRuta);
+            this.groupBox1.Controls.Add(this.textBoxImagen);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.numericUpDownPrecio);
             this.groupBox1.Controls.Add(this.numericUpDownCantidad);
             this.groupBox1.Controls.Add(this.numericUpDownCodigo);
@@ -211,7 +217,33 @@
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
-            // Form2
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 248);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Imagen:";
+            // 
+            // textBoxImagen
+            // 
+            this.textBoxImagen.Location = new System.Drawing.Point(89, 245);
+            this.textBoxImagen.Name = "textBoxImagen";
+            this.textBoxImagen.Size = new System.Drawing.Size(163, 20);
+            this.textBoxImagen.TabIndex = 13;
+            // 
+            // buttonRuta
+            // 
+            this.buttonRuta.Location = new System.Drawing.Point(258, 245);
+            this.buttonRuta.Name = "buttonRuta";
+            this.buttonRuta.Size = new System.Drawing.Size(35, 20);
+            this.buttonRuta.TabIndex = 14;
+            this.buttonRuta.Text = "...";
+            this.buttonRuta.UseVisualStyleBackColor = true;
+            this.buttonRuta.Click += new System.EventHandler(this.buttonRuta_Click);
+            // 
+            // Alta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -219,7 +251,7 @@
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonAlta);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form2";
+            this.Name = "Alta";
             this.Text = "Form2";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -247,5 +279,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonRuta;
+        private System.Windows.Forms.TextBox textBoxImagen;
+        private System.Windows.Forms.Label label7;
     }
 }

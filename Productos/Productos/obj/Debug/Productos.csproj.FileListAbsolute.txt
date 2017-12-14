@@ -1,0 +1,13 @@
+C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\bin\Debug\Productos.exe.config
+C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\bin\Debug\Productos.exe
+C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\bin\Debug\Productos.pdb
+C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\obj\Debug\Productos.Exportar.resources
+C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\obj\Debug\Productos.Ayuda.resources
+C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\obj\Debug\Productos.Principal.resources
+C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\obj\Debug\Productos.Alta.resources
+C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\obj\Debug\Productos.Modificacion.resources
+C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\obj\Debug\Productos.Properties.Resources.resources
+C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\obj\Debug\Productos.csproj.GenerateResource.Cache
+C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\obj\Debug\Productos.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\obj\Debug\Productos.exe
+C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\obj\Debug\Productos.pdb

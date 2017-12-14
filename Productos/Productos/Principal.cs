@@ -24,7 +24,7 @@ namespace Productos
         {
             InitializeComponent();
             this.Text = "Productos";
-            Image imagen = Image.FromFile(@".\d3200.jpeg");
+            Image imagen = Image.FromFile(@".\d3200.jpg");
             TablaDatos.Rows.Add("D3200", 1, 55, 455.5, "DX format", "Cuerpo", imagen, mod, del);//Fila de prueba
         }
 

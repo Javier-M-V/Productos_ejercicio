@@ -153,6 +153,7 @@ namespace Productos
             //Edición según ínidice  por medio de un formulario adaptado a la modificación por medio de botón
             if (e.ColumnIndex == TablaDatos.Columns["ColumnModificar"].Index)
             {
+                Image imagen = null;
                 nombrearticulo = TablaDatos.Rows[e.RowIndex].Cells[0].Value.ToString();
                 Modificacion a = new Modificacion();
                 a.Text = "Modificando " + nombrearticulo;
@@ -167,12 +168,19 @@ namespace Productos
                         precioValor = a.precio;
                         descripcionValor = a.descripcion;
                         tipoValor = a.tipo;
+                        rutaimagen = a.ruta;
+                        try
+                        {
+                            imagen = Image.FromFile(rutaimagen);
+                            MessageBox.Show(rutaimagen);
+                        }
+                        catch (Exception) { MessageBox.Show("Explota la imagen"); imagen = null; }
                         TablaDatos.Rows[e.RowIndex].Cells[0].Value = nombreValor;
                         TablaDatos.Rows[e.RowIndex].Cells[2].Value = cantidadValor;
                         TablaDatos.Rows[e.RowIndex].Cells[3].Value = precioValor;
                         TablaDatos.Rows[e.RowIndex].Cells[4].Value = descripcionValor;
                         TablaDatos.Rows[e.RowIndex].Cells[5].Value = tipoValor;
-                        TablaDatos.Rows[e.RowIndex].Cells[6].Value = null;
+                        TablaDatos.Rows[e.RowIndex].Cells[6].Value = imagen;
                         TablaDatos.Rows[e.RowIndex].Cells[7].Value = mod;
                         TablaDatos.Rows[e.RowIndex].Cells[8].Value = del;
                         MessageBox.Show("Modificado");
@@ -236,6 +244,7 @@ namespace Productos
         {
             try
             {
+                Image imagen = null;
                 string nombrearticulo = TablaDatos.SelectedRows[0].Cells[1].Value.ToString();
                 int index = TablaDatos.SelectedRows[0].Index;
                 Modificacion a = new Modificacion();
@@ -249,12 +258,19 @@ namespace Productos
                     precioValor = a.precio;
                     descripcionValor = a.descripcion;
                     tipoValor = a.tipo;
+                    rutaimagen = a.ruta;
+                    try
+                    {
+                        imagen = Image.FromFile(rutaimagen);
+                        MessageBox.Show(rutaimagen);
+                    }
+                    catch (Exception) { MessageBox.Show("Explota la imagen"); imagen = null; }
                     TablaDatos.Rows[index].Cells[0].Value = nombreValor;
                     TablaDatos.Rows[index].Cells[2].Value = cantidadValor;
                     TablaDatos.Rows[index].Cells[3].Value = precioValor;
                     TablaDatos.Rows[index].Cells[4].Value = descripcionValor;
                     TablaDatos.Rows[index].Cells[5].Value = tipoValor;
-                    TablaDatos.Rows[index].Cells[6].Value = null;
+                    TablaDatos.Rows[index].Cells[6].Value = imagen;
                     TablaDatos.Rows[index].Cells[7].Value = mod;
                     TablaDatos.Rows[index].Cells[8].Value = del;
                     MessageBox.Show("Modificado");

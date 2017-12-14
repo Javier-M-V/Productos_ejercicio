@@ -228,6 +228,7 @@
             // 
             // textBoxImagen
             // 
+            this.textBoxImagen.Enabled = false;
             this.textBoxImagen.Location = new System.Drawing.Point(89, 245);
             this.textBoxImagen.Name = "textBoxImagen";
             this.textBoxImagen.Size = new System.Drawing.Size(163, 20);

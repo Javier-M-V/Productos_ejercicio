@@ -10,3 +10,4 @@ C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\obj\Debug\P
 C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\obj\Debug\Productos.csproj.CoreCompileInputs.cache
 C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\obj\Debug\Productos.exe
 C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\obj\Debug\Productos.pdb
+C:\Users\Alumno\Source\Repos\Productos_ejercicio\Productos\Productos\obj\Debug\Productos.csprojResolveAssemblyReference.cache

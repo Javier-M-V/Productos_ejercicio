@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Productos
 {
     public partial class Alta : Form
     {
+        //Properties para pasar a principal
         public string nombre { get; set; }
         public int codigo { get; set; }
         public int cantidad { get; set; }

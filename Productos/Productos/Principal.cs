@@ -4,9 +4,6 @@ using System.IO;
 using System.Windows.Forms;
 
 
-/*He metido los form para cada operación, pero para importar, lo más conveniente
- es lo más común: usar un OpenFileDialog */
-
 namespace Productos
 {
     public partial class Principal : Form
@@ -32,34 +29,8 @@ namespace Productos
         //inserto filas una a una desde el Form2
         private void insertarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Image imagen = null;
-            Alta a = new Alta();
-            a.Text = "Nuevo producto";
-            DialogResult ventana = new DialogResult();
-            ventana = a.ShowDialog();
-            if (a.DialogResult == DialogResult.OK)
-            {
-                nombreValor = a.nombre;
-                codigoValor = a.codigo;
-                cantidadValor = a.cantidad;
-                precioValor = a.precio;
-                descripcionValor = a.descripcion;
-                tipoValor = a.tipo;
-                rutaimagen = a.ruta;
-                try {
-                    imagen = Image.FromFile(rutaimagen);
-                }
-                catch (Exception) { imagen = null; }
-
-                if (comprobar(nombreValor, codigoValor))
-                {
-                    TablaDatos.Rows.Add(nombreValor, codigoValor, cantidadValor, precioValor, descripcionValor, tipoValor, imagen, mod, del);
-                }
-                else
-                {
-                    MessageBox.Show("Comprueba que el código no exista previamente y que el producto tenga nombre y código asignados");
-                }
-            }
+            Anadir();
+            comprobacion();
         }
 
         //Compruebo que la clave no anda repetida
@@ -103,6 +74,7 @@ namespace Productos
                         MessageBox.Show("Exportado con éxito");
                     }
                 }
+                comprobacion();
             }
             catch (IOException) {
 
@@ -129,9 +101,12 @@ namespace Productos
                         TablaDatos.Rows.Add(valores[0], Int32.Parse(valores[1]), Int32.Parse(valores[2]), Double.Parse(valores[3]), valores[4], valores[5], null, mod, del);
                     }
                 }
+                comprobacion();
             }
+
             else {
                 MessageBox.Show("Nada que exportar. La tabla está vacía");
+                comprobacion();
             }
         }
 
@@ -149,6 +124,7 @@ namespace Productos
                     TablaDatos.Rows.RemoveAt(e.RowIndex);
                 }
             }
+            comprobacion();
 
             //Edición según ínidice  por medio de un formulario adaptado a la modificación por medio de botón
             if (e.ColumnIndex == TablaDatos.Columns["ColumnModificar"].Index)
@@ -189,6 +165,13 @@ namespace Productos
             }
         }
 
+        //boton añadir de abajo
+        private void buttonAnadir_Click(object sender, EventArgs e)
+        {
+            Anadir();
+            comprobacion();
+        }
+
         //botón de modificación a partir de selección 
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -205,12 +188,14 @@ namespace Productos
         private void borrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             borrado();
+            comprobacion();
         }
 
         //botón de borrado a partir de selección
         private void buttonBorrar_Click_1(object sender, EventArgs e)
         {
             borrado();
+            comprobacion();
         }
 
         //función de borrado, que realiza un bucle a partir de toda la selección, preguntado al usuario si quiere borrar
@@ -236,7 +221,8 @@ namespace Productos
                         }
                     }
                 }
-            }   
+            }
+            comprobacion();
         }
 
         //funcion de modificación a partir de selección
@@ -279,6 +265,64 @@ namespace Productos
             catch (ArgumentOutOfRangeException)
             {
                 MessageBox.Show("Ninguna fila seleccionada");
+            }
+        }
+
+        //Añadir productos 
+        private void Anadir()
+        {
+            Image imagen = null;
+            Alta a = new Alta();
+            a.Text = "Nuevo producto";
+            DialogResult ventana = new DialogResult();
+            ventana = a.ShowDialog();
+            if (a.DialogResult == DialogResult.OK)
+            {
+                nombreValor = a.nombre;
+                codigoValor = a.codigo;
+                cantidadValor = a.cantidad;
+                precioValor = a.precio;
+                descripcionValor = a.descripcion;
+                tipoValor = a.tipo;
+                rutaimagen = a.ruta;
+                try
+                {
+                    imagen = Image.FromFile(rutaimagen);
+                }
+                catch (Exception) { imagen = null; }
+
+                if (comprobar(nombreValor, codigoValor))
+                {
+                    TablaDatos.Rows.Add(nombreValor, codigoValor, cantidadValor, precioValor, descripcionValor, tipoValor, imagen, mod, del);
+                }
+                else
+                {
+                    MessageBox.Show("Comprueba que el código no exista previamente y que el producto tenga nombre y código asignados");
+                }
+            }
+        }
+
+        //función que comprueba el estado de la tabla para activar o desactivar botones
+        private void comprobacion()
+        {
+            if (TablaDatos.Rows.Count > 0)
+            {
+
+                exportarToolStripMenuItem.Enabled = true;
+                importarToolStripMenuItem.Enabled = true;
+                modificarToolStripMenuItem.Enabled = true;
+                borrarToolStripMenuItem.Enabled = true;
+                buttonBorrar.Enabled = true;
+                buttonModificar.Enabled = true;
+            }
+            else
+            {
+                exportarToolStripMenuItem.Enabled = false;
+                importarToolStripMenuItem.Enabled = false;
+                modificarToolStripMenuItem.Enabled = false;
+                borrarToolStripMenuItem.Enabled = false;
+                buttonBorrar.Enabled = false;
+                buttonModificar.Enabled = false;
             }
         }
     }

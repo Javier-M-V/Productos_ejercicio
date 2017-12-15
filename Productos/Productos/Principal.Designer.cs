@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TablaDatos = new System.Windows.Forms.DataGridView();
             this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,7 +41,7 @@
             this.ColumnImagen = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnModificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColumnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStripPrincipal = new System.Windows.Forms.MenuStrip();
             this.insertarNuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.insertarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,8 +51,9 @@
             this.importarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonModificar = new System.Windows.Forms.Button();
             this.buttonBorrar = new System.Windows.Forms.Button();
+            this.buttonAnadir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TablaDatos)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.menuStripPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
             // TablaDatos
@@ -86,27 +87,27 @@
             // 
             // ColumnCodigo
             // 
-            dataGridViewCellStyle1.Format = "N0";
-            dataGridViewCellStyle1.NullValue = null;
-            this.ColumnCodigo.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.ColumnCodigo.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColumnCodigo.HeaderText = "Código";
             this.ColumnCodigo.Name = "ColumnCodigo";
             this.ColumnCodigo.ReadOnly = true;
             // 
             // ColumnCantidad
             // 
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.ColumnCantidad.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Format = "N0";
+            dataGridViewCellStyle5.NullValue = null;
+            this.ColumnCantidad.DefaultCellStyle = dataGridViewCellStyle5;
             this.ColumnCantidad.HeaderText = "Cantidad";
             this.ColumnCantidad.Name = "ColumnCantidad";
             this.ColumnCantidad.ReadOnly = true;
             // 
             // ColumnPrecio
             // 
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.ColumnPrecio.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Format = "N2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.ColumnPrecio.DefaultCellStyle = dataGridViewCellStyle6;
             this.ColumnPrecio.HeaderText = "Precio";
             this.ColumnPrecio.Name = "ColumnPrecio";
             this.ColumnPrecio.ReadOnly = true;
@@ -147,16 +148,16 @@
             this.ColumnBorrar.Text = "✗";
             this.ColumnBorrar.UseColumnTextForButtonValue = true;
             // 
-            // menuStrip1
+            // menuStripPrincipal
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStripPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.insertarNuevoToolStripMenuItem,
             this.archivoToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(975, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStripPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.menuStripPrincipal.Name = "menuStripPrincipal";
+            this.menuStripPrincipal.Size = new System.Drawing.Size(975, 24);
+            this.menuStripPrincipal.TabIndex = 1;
+            this.menuStripPrincipal.Text = "menuStripPrincipal";
             // 
             // insertarNuevoToolStripMenuItem
             // 
@@ -171,21 +172,21 @@
             // insertarToolStripMenuItem
             // 
             this.insertarToolStripMenuItem.Name = "insertarToolStripMenuItem";
-            this.insertarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.insertarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.insertarToolStripMenuItem.Text = "Insertar";
             this.insertarToolStripMenuItem.Click += new System.EventHandler(this.insertarToolStripMenuItem_Click);
             // 
             // modificarToolStripMenuItem
             // 
             this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.modificarToolStripMenuItem.Text = "Modificar";
             this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
             // 
             // borrarToolStripMenuItem
             // 
             this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
-            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.borrarToolStripMenuItem.Text = "Borrar";
             this.borrarToolStripMenuItem.Click += new System.EventHandler(this.borrarToolStripMenuItem_Click);
             // 
@@ -201,20 +202,20 @@
             // exportarToolStripMenuItem
             // 
             this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
-            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exportarToolStripMenuItem.Text = "Exportar";
             this.exportarToolStripMenuItem.Click += new System.EventHandler(this.Exportar_AToolStripMenuItem_Click);
             // 
             // importarToolStripMenuItem
             // 
             this.importarToolStripMenuItem.Name = "importarToolStripMenuItem";
-            this.importarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.importarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.importarToolStripMenuItem.Text = "Importar";
             this.importarToolStripMenuItem.Click += new System.EventHandler(this.Importar_AToolStripMenuItem_Click);
             // 
             // buttonModificar
             // 
-            this.buttonModificar.Location = new System.Drawing.Point(368, 405);
+            this.buttonModificar.Location = new System.Drawing.Point(435, 406);
             this.buttonModificar.Name = "buttonModificar";
             this.buttonModificar.Size = new System.Drawing.Size(75, 23);
             this.buttonModificar.TabIndex = 2;
@@ -224,7 +225,7 @@
             // 
             // buttonBorrar
             // 
-            this.buttonBorrar.Location = new System.Drawing.Point(487, 404);
+            this.buttonBorrar.Location = new System.Drawing.Point(550, 405);
             this.buttonBorrar.Name = "buttonBorrar";
             this.buttonBorrar.Size = new System.Drawing.Size(75, 23);
             this.buttonBorrar.TabIndex = 3;
@@ -232,21 +233,32 @@
             this.buttonBorrar.UseVisualStyleBackColor = true;
             this.buttonBorrar.Click += new System.EventHandler(this.buttonBorrar_Click_1);
             // 
+            // buttonAnadir
+            // 
+            this.buttonAnadir.Location = new System.Drawing.Point(329, 405);
+            this.buttonAnadir.Name = "buttonAnadir";
+            this.buttonAnadir.Size = new System.Drawing.Size(75, 23);
+            this.buttonAnadir.TabIndex = 4;
+            this.buttonAnadir.Text = "Añadir";
+            this.buttonAnadir.UseVisualStyleBackColor = true;
+            this.buttonAnadir.Click += new System.EventHandler(this.buttonAnadir_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(975, 440);
+            this.Controls.Add(this.buttonAnadir);
             this.Controls.Add(this.buttonBorrar);
             this.Controls.Add(this.buttonModificar);
             this.Controls.Add(this.TablaDatos);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.menuStripPrincipal);
+            this.MainMenuStrip = this.menuStripPrincipal;
             this.Name = "Principal";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.TablaDatos)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStripPrincipal.ResumeLayout(false);
+            this.menuStripPrincipal.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,7 +267,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView TablaDatos;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStripPrincipal;
         private System.Windows.Forms.ToolStripMenuItem insertarNuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportarToolStripMenuItem;
@@ -274,6 +286,7 @@
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem;
         private System.Windows.Forms.Button buttonModificar;
         private System.Windows.Forms.Button buttonBorrar;
+        private System.Windows.Forms.Button buttonAnadir;
     }
 }
 
